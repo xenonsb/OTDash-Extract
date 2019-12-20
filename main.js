@@ -53,7 +53,7 @@ function extractAll() {
 		alert('Wrong location - must be at studioname.orangetheoryfitness.com/apps/otf/classes');
 		return
 	}
-	
+	[...document.getElementsByTagName('iframe')].forEach(x => x.remove())
 	extractNow.innerText = 'Extracting - please wait';
 	
 	var extractIDs = [...document.getElementsByTagName('input')].filter(x => x.checked).map(y => y.id);
